@@ -1,4 +1,17 @@
 .header{
-  background: #202024;
-  height: 80px;
+  background: var(--gray-800);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.header strong{
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.header img{
+  height: 3rem;
 }
