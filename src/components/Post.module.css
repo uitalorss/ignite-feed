@@ -5,21 +5,25 @@
   padding: 2.5rem;
 }
 
-.post header{
+.post + .post{
+  margin-top: 2rem;
+}
+
+.post > header{
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .author{
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
 .authorInfo{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: .25rem;
 }
 
 .authorInfo strong{
@@ -42,3 +46,23 @@
   outline: 2px solid var(--green-500);
 }
 
+.content{
+  margin-top: 1.5rem;
+}
+
+.content p{
+  color: var(--gray-300);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.content a{
+  font-weight: 700;
+  color: var(--green-500);
+  text-decoration: none;
+}
+
+.content a:hover{
+  color: var(--green-300);
+}
