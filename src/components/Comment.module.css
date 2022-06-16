@@ -51,6 +51,14 @@
   justify-content: space-between
 }
 
+.commentContent > header strong{
+  font-size: .875rem;
+}
+
+.commentContent > header time{
+  font-size: .75rem;
+}
+
 .commentContent > p{
   margin-top: 1rem;
   line-height: 1.6;
