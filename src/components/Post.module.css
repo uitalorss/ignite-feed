@@ -116,3 +116,7 @@
 .commentForm:focus-within footer{
   display: block;
 }
+
+.commentList{
+  margin-top: 2rem;
+}

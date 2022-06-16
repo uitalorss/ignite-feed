@@ -1,0 +1,76 @@
+.comment{
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.comment > img{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+}
+
+.commentBox{
+  flex: 1;
+}
+
+.commentBox footer{
+  margin-top: 1rem;
+}
+
+.commentBox footer > button{
+  padding: .5rem;
+  background: transparent;
+  border: none;
+  color: var(--gray-400);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  cursor: pointer;
+}
+
+.commentBox footer > button:hover{
+  color: var(--green-300);
+}
+
+.commentBox footer > button span::before{
+  content: "\2022";
+  padding-right: 0.3rem;
+}
+
+.commentContent{
+  padding: 1rem;
+  background: var(--gray-700);
+  border-radius: 8px;
+}
+
+.commentContent > header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between
+}
+
+.commentContent > p{
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.buttonDelete{
+  background: transparent;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.buttonDelete:hover{
+  color: var(--red-500);
+}
+
+.infoAuthor{
+  display: flex;
+  flex-direction: column;
+}
+
