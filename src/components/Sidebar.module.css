@@ -23,6 +23,7 @@
   justify-content: center;
   gap: .4rem;
   transition: color 0.1s, background-color 0.1s;
+  font-weight: 700;
 }
 
 .sidebar footer a:hover{
