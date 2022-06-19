@@ -10,7 +10,6 @@ Propriedades do post
 Author: Imagem, Nome e cargo
 data da publicação
 conteúdo do post
-
 */
 
 const posts = [
