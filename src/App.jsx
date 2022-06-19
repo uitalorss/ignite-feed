@@ -28,7 +28,7 @@ const posts = [
     publishedAt: new Date('2022-06-11 19:00:00')
    },
    {
-    id: 1,
+    id: 2,
     author: {
       name: "João das Neves",
       image_url: "https://github.com/uitalorss.png", 
@@ -50,7 +50,8 @@ export function App() {
         <main>
           {posts.map(post => {
             return(
-              <Post 
+              <Post
+                key={post.id} 
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
