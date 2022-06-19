@@ -19,15 +19,21 @@ export function Post({author, publishedAt, content}){
     setNewCommentText('');
   }
 
+  function handleNewCommentInvalid(){
+    event.target.setCustomValidity("Este campo não pode ficar vazio.");
+  }
+
+  function handleNewCommentChange(){
+    event.target.setCustomValidity('');
+    setNewCommentText(event.target.value)
+  }
+
+
   function deleteComment(commentToDelete){
     const newListOfComments = comments.filter(comment => {
       return comment !== commentToDelete
     })
-    setComments(newListOfComments);
-  }
-
-  function handleNewCommentChange(){
-    setNewCommentText(event.target.value)
+    setComments(newListOfComments); 
   }
 
   const publishedDate = format(publishedAt, "d 'de' MMMM 'às' HH:mm'h'", {
@@ -39,7 +45,8 @@ export function Post({author, publishedAt, content}){
     addSuffix: true
   })
 
-
+  const isNewCommentEmpty = newCommentText.length === 0;
+  
   return(
     <article className={styles.post}>
       <header>
@@ -51,8 +58,8 @@ export function Post({author, publishedAt, content}){
           </div>
         </div>
         <time title={publishedDate} dateTime={publishedAt.toISOString()}>{publishedRelativeToNow}</time>
-
       </header>
+
       <div className={styles.content}>
         {content.map(line => {
           if(line.type === 'paragraph'){
@@ -62,6 +69,7 @@ export function Post({author, publishedAt, content}){
           }
         })}
       </div>
+      
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea
@@ -69,19 +77,21 @@ export function Post({author, publishedAt, content}){
           placeholder='Deixe o seu comentario'
           value={newCommentText}
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer>
-          <button type='submit'>Publicar</button>
+          <button disabled={isNewCommentEmpty} type='submit'>Publicar</button>
         </footer>
       </form>
+      
       <div className={styles.commentList}>
         {comments.map(comment => {
           return <Comment 
             key={comment} 
             content={comment} 
-            deleteComment={deleteComment}/>
+            onDeleteComment={deleteComment}/>
         })}
-        
       </div>
     </article>
   )

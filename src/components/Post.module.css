@@ -94,11 +94,15 @@
   border-radius: 8px;
   transition: background-color .1s;
   cursor: pointer;
-
 }
 
-.commentForm button:hover{
+.commentForm button:not(:disabled):hover{
   background: var(--green-300);
+}
+
+.commentForm button:disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .commentForm footer{
